@@ -1,0 +1,13 @@
+<p>Escribe el nombre del jugador y presiona en el icono para agregarlo</p>
+<ion-list>
+  <ion-item *ngFor="let item of players; index as i">
+    <ion-chip>
+      <ion-input placeholder="Nombre jugador {{i+1}}" [(ngModel)]="item.name"  type="text"></ion-input>
+      <ion-icon name="person-add"></ion-icon>
+    </ion-chip>
+  </ion-item>
+  <br />
+</ion-list>
+<div text-center align-items-center *ngIf="checked==true">
+   <ion-button text-center (click)="listo()"> Listo! </ion-button>
+</div>

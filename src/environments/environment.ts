@@ -6,6 +6,14 @@ export const environment = {
   production: false
 };
 
+export const spotifyApiConfig = {
+  clientId: "663cef411bf44adfb92de486f5a10bc6",
+  redirectUrl: "http://localhost:8100",
+  scopes: ["streaming"],
+  tokenExchangeUrl: "https://uun6zd0tac.execute-api.eu-central-1.amazonaws.com/dev/exchange",
+  tokenRefreshUrl: "https://uun6zd0tac.execute-api.eu-central-1.amazonaws.com/dev/refresh"
+}
+
 /*
  * For easier debugging in development mode, you can import the following file
  * to ignore zone related error stack frames such as `zone.run`, `zoneDelegate.invokeTask`.

@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Generos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-button (click)="spotifyAuth()" *ngIf="result == undefined">Login con Spotify</ion-button>
+  <ion-grid *ngIf="result!=undefined">
+        <!-- [ngStyle]="{'background-image': 'url('+item.icons[0].url+')' ,'background-size':'cover','background-repeat':'no-repeat'}" -->
+        <ion-card *ngFor="let item of categorias" (click)="play(item.name, item.icons[0].url, item.id)">
+          <img style="height:100%; width:100%;" src="{{item.icons[0].url}}" alt="">
+          <ion-card-header>
+            <ion-card-title class="white_text">{{item.name}}</ion-card-title>
+          </ion-card-header>
+        </ion-card>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title style="color:white;">{{categoryData.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-label style="color:white;" >Playlists de {{categoryData.name}}</ion-label>
+  <ion-label style="color:white;">Selecciona las playlists con las que quisieras jugar.</ion-label>
+  <ion-list *ngFor="let item of playLists">
+  <ion-radio-group>
+    <ion-list-header>
+    </ion-list-header>
+    <ion-item>
+      <ion-checkbox color="primary" style="color:white;" [(ngModel)]="item.model"></ion-checkbox>
+      <ion-label style="color:white;" class="text_white">{{item.name}}</ion-label>
+    </ion-item>
+  </ion-radio-group>
+</ion-list>
+<div text-center align-items-center>
+  <ion-button text-center color="success"(click)="IrJuego()">A Jugar!</ion-button>
+</div>
+</ion-content>

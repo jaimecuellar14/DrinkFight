@@ -1,12 +1,46 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <img style="height:40px; width:40px;"src="../../assets/icon/spanish.png" />
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
-
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+  <ion-slides style="height:100%;"pager="true" [options]="slideOpts">
+      <ion-slide>
+        <ion-grid>
+          <ion-icon name="star-half" size="large"></ion-icon>
+          <ion-row>
+          </ion-row>
+          <br />
+          <ion-row>
+            <p>Bienvenido a la aplicación para juntarte con tus amigos y divertirte como nunca!</p>
+          </ion-row>
+        </ion-grid>
+      </ion-slide>
+      <ion-slide>
+        <ion-grid>
+          <ion-icon name="logo-game-controller-a" size="large"></ion-icon>
+          <ion-row></ion-row>
+          <ion-row>
+            <p>Llama a todos tus amgigos, reunelos y empieza a jugar!</p>
+          </ion-row>
+        </ion-grid>
+      </ion-slide>
+      <ion-slide>
+        <ion-grid>
+          <ion-icon name="beer" size="large"></ion-icon>
+          <ion-row></ion-row>
+          <ion-row>
+            <p>
+              Escogé una categoria de juego y a beber!
+              </p>
+          </ion-row>
+          <ion-row>
+          </ion-row>
+          <ion-button (click)="irMain()">Empezar</ion-button>
+
+        </ion-grid>
+      </ion-slide>
+    </ion-slides>
 </ion-content>
