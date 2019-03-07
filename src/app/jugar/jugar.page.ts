@@ -22,6 +22,8 @@ export class JugarPage implements OnInit {
   playing:boolean=false;
   opciones:any;
   currentSong:string="";
+  arr1:any;
+  arr2:any;
   constructor(private storage:Storage, private spotifyService:SpotifyApiService,private appConfig: AppConfigServiceService
   , private media: Media) { }
 
@@ -30,11 +32,15 @@ export class JugarPage implements OnInit {
     this.getCurrentPlayer();
   }
 
+
   starTimer(){
     var intervalVal = setInterval(function(){
+      this.currentTrack = this.media.create("../../assets/audio/beep_countdown.wav");
+      this.currentTrack.play();
       this.contador--;
       if (this.contador==0){
         clearInterval(intervalVal);
+        this.currentTrack.pause();
         this.escuchar();
       }
     }.bind(this),1000);
@@ -63,6 +69,9 @@ export class JugarPage implements OnInit {
     }
     this.opciones.push(canciones_correctas[random]);
     this.swapArray(this.opciones);
+
+    this.arr1 = this.opciones.slice(0,2);
+    this.arr2 = this.opciones.slice(2,4);
     console.log(this.opciones);
     this.playing=true;
     //this.currentTrack = this.media.create(canciones[0][3].track.preview_url);
@@ -90,9 +99,15 @@ export class JugarPage implements OnInit {
   }
 
   verificarRespuesta(answer){
+    this.playing=false;
+    this.currentTrack.pause();
     if (answer ==this.currentSong){
       alert("correcto");
+      this.contador=5;
+      this.starTimer();
     }else{
+      this.contador=5;
+      this.starTimer();
       alert("la cagaste");
     }
   }

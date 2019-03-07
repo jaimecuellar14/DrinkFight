@@ -12,6 +12,7 @@
   <!--  <ion-card-title style="color:white;">{{curentPlayer.name | async}}</ion-card-title>-->
   </ion-card-header>
   <ion-icon name="musical-notes"></ion-icon>
+  <p style="color:white;">Es tu turno {{currentPlayer.name}}</p>
   <ion-card-content style="color:white;">
     {{contador}}
     <!--<ion-icon name="musical-notes"></ion-icon>
@@ -19,20 +20,18 @@
   </ion-card-content>
 </ion-card>
 
-  <button *ngIf="contador==0 && songStopped==false"ion-button icon-left (click)="escuchar()" clear small>
-    <ion-icon name="play"></ion-icon>
-    Preview
-  </button>
-
   <div *ngIf="songStopped==true">
     <h1 style="color:white;">La cancion ha parado</h1>
   </div>
 
   <div *ngIf="playing==true">
-    <ion-grid *ngFor="let item of opciones">
+    <ion-grid>
       <ion-row>
-        <ion-col col-6 style="text-overflow: ellipsis;">
-          <ion-button color="success" (click)="verificarRespuesta(item.name)">{{item.name}}</ion-button>
+        <ion-col col-4 *ngFor="let item of arr1">
+          <ion-button color="warning" (click)="verificarRespuesta(item.name)">{{item.name}}</ion-button>
+        </ion-col>
+        <ion-col col-4 *ngFor="let item of arr2">
+          <ion-button color="warning" (click)="verificarRespuesta(item.name)">{{item.name}}</ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
