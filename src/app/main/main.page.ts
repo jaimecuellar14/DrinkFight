@@ -4,6 +4,8 @@ import { PopoverController } from '@ionic/angular';
 import { UserListComponent } from '../components/user-list/user-list.component';
 import { CategoryServiceService } from '../services/category-service.service';
 import { Storage } from '@ionic/storage';
+import { JugadoresComponent } from '../components/jugadores/jugadores.component';
+
 
 
 @Component({
@@ -24,6 +26,12 @@ export class MainPage implements OnInit {
     this.router.navigate(["/musica"]);
   }
 
+  irVerdadReto(){
+    this.router.navigate(["/verdad-reto"]);
+  }
+
+//Muestra si hay jugadores inscritos
+//Si no los hay muestra popOver para agregar
   checknumPlayers(){
     this.storage.get("players").then(x =>{
       if (x){
@@ -34,6 +42,8 @@ export class MainPage implements OnInit {
     });
   }
 
+
+//Mostramos popoover para agregar jugadores
   async presentPopover(ev: any) {
    const popover = await this.popoverCtrl.create({
      component: UserListComponent,
@@ -43,6 +53,20 @@ export class MainPage implements OnInit {
    this.categoryService.setPopoverCtrl(popover);
    return await popover.present();
  }
+
+ mostrarJugadores(){
+   this.popOverJugadores("open");
+ }
+
+ async popOverJugadores(ev: any) {
+  const popover = await this.popoverCtrl.create({
+    component: JugadoresComponent,
+    event: ev,
+    translucent: true
+  });
+  this.categoryService.setPopoverCtrl(popover);
+  return await popover.present();
+}
 
 
 }

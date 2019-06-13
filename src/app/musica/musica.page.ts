@@ -29,6 +29,9 @@ export class MusicaPage implements OnInit {
         if (res){
           this.spotifyAuth(true);
         }
+        else{
+          this.spotifyAuth(true);
+        }
       });
     });
    }

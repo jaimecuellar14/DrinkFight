@@ -4,9 +4,9 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding>
+<ion-content padding center text-center>
 
-  <ion-card text-center align-items-center *ngIf="contador!=0">
+  <ion-card text-center align-items-center *ngIf="contador!=0" style="margin-top:50%;">
   <ion-card-header>
     <ion-card-subtitle style="color:white;">Adivina la cancion</ion-card-subtitle>
   <!--  <ion-card-title style="color:white;">{{curentPlayer.name | async}}</ion-card-title>-->
@@ -15,22 +15,19 @@
   <p style="color:white;">Es tu turno {{currentPlayer.name}}</p>
   <ion-card-content style="color:white;">
     {{contador}}
-    <!--<ion-icon name="musical-notes"></ion-icon>
-    <p style="color:white;">{{contador}}</p>-->
+    
   </ion-card-content>
 </ion-card>
 
-  <div *ngIf="songStopped==true">
-    <h1 style="color:white;">La cancion ha parado</h1>
-  </div>
 
-  <div *ngIf="playing==true">
+
+  <div *ngIf="playing==true" style="margin-top:50%;">
     <ion-grid>
       <ion-row>
-        <ion-col col-4 *ngFor="let item of arr1">
+        <ion-col col *ngFor="let item of arr1">
           <ion-button color="warning" (click)="verificarRespuesta(item.name)">{{item.name}}</ion-button>
         </ion-col>
-        <ion-col col-4 *ngFor="let item of arr2">
+        <ion-col col *ngFor="let item of arr2">
           <ion-button color="warning" (click)="verificarRespuesta(item.name)">{{item.name}}</ion-button>
         </ion-col>
       </ion-row>

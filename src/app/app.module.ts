@@ -14,11 +14,12 @@ import { IonicStorageModule } from '@ionic/storage';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { UsersComponent } from './components/users/users.component';
 import { AppConfigServiceService } from './services/app-config/app-config-service.service';
+import { JugadoresComponent } from './components/jugadores/jugadores.component';
 
 
 @NgModule({
-  declarations: [AppComponent, UserListComponent, UsersComponent],
-  entryComponents: [UserListComponent,UsersComponent],
+  declarations: [AppComponent, UserListComponent, UsersComponent, JugadoresComponent],
+  entryComponents: [UserListComponent,UsersComponent,JugadoresComponent],
   imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, IonicStorageModule.forRoot(), HttpClientModule,ReactiveFormsModule, FormsModule],
   providers: [
     StatusBar,

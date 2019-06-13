@@ -1,6 +1,11 @@
 <ion-header>
   <ion-toolbar color="primary-tint">
     <ion-title>Drink Fight</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="mostrarJugadores()">
+        <ion-icon name="people"></ion-icon>
+    </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
@@ -14,13 +19,22 @@
       Se escuchara un fragmento de una cancion y se daran 4 opciones, debes escoger la cancion correcta!
     </ion-card-content>
   </ion-card>
-  <ion-card class="verdad_reto-background">
+  <ion-card class="verdad_reto-background" (click)="irVerdadReto()">
     <ion-card-header>
       <ion-card-subtitle class="white_text">Retos</ion-card-subtitle>
       <ion-card-title class="white_text">Verdad o Reto</ion-card-title>
     </ion-card-header>
     <ion-card-content class="white_text">
       Al jugador en turno se le dara la posibilidad de escoger verdad o reto, si se niega pierde.
+    </ion-card-content>
+  </ion-card>
+  <ion-card  (click)="irVerdadReto()">
+    <ion-card-header>
+      <ion-card-subtitle class="white_text">Yo nunca nunca</ion-card-subtitle>
+      <ion-card-title class="white_text">Yo nunca nunca</ion-card-title>
+    </ion-card-header>
+    <ion-card-content class="white_text">
+      El tipico yo nunca nunca, para saber los secretos mas profundos de los demas.
     </ion-card-content>
   </ion-card>
 </ion-content>

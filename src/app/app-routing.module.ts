@@ -8,6 +8,7 @@ const routes: Routes = [
   { path: 'musica', loadChildren: './musica/musica.module#MusicaPageModule' },
   { path: 'play-music', loadChildren: './play-music/play-music.module#PlayMusicPageModule' },
   { path: 'jugar', loadChildren: './jugar/jugar.module#JugarPageModule' },
+  { path: 'verdad-reto', loadChildren: './verdad-reto/verdad-reto.module#VerdadRetoPageModule' },
 ];
 
 @NgModule({
