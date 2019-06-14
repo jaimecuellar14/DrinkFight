@@ -12,6 +12,7 @@ import { CategoryServiceService } from '../../services/category-service.service'
 export class JugadoresComponent implements OnInit {
 
   jugadores:any;
+  agregar:boolean=false;
   constructor(private categoryService: CategoryServiceService, private storage:Storage, private popoverCtrl: PopoverController) { }
 
   ngOnInit() {
@@ -27,6 +28,11 @@ export class JugadoresComponent implements OnInit {
     catch(e){
       console.log(e);
     }
+  }
+  addPlayer(playerName)
+  {
+    this.jugadores.push({name:playerName});
+    this.updatePlayers();
   }
   deletePlayer(name)
   {

@@ -36,9 +36,7 @@ export class MusicaPage implements OnInit {
     });
    }
   ngOnInit() {
-  //  this.getCategories();
-  //public AKIAID5M5U5UI3KS2FHA
-  // secret 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
+
   this.getSpotifyConfig();
   }
 
@@ -60,13 +58,6 @@ export class MusicaPage implements OnInit {
     const loadingSpinner = await this.loadingCtrl.create({
       message:"Logeandose a Spotify"
     });
-    /*const config = {
-      clientId: "663cef411bf44adfb92de486f5a10bc6",
-      redirectUrl: "http://localhost:8100",
-      scopes: ["streaming"], // see Spotify Dev console for all scopes
-      tokenExchangeUrl: "https://uun6zd0tac.execute-api.eu-central-1.amazonaws.com/dev/exchange",
-      tokenRefreshUrl: "https://uun6zd0tac.execute-api.eu-central-1.amazonaws.com/dev/refresh",
-    };*/
 
     if (loading){
       await loadingSpinner.present();

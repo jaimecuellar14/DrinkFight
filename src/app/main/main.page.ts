@@ -62,7 +62,8 @@ export class MainPage implements OnInit {
   const popover = await this.popoverCtrl.create({
     component: JugadoresComponent,
     event: ev,
-    translucent: true
+    translucent: true,
+    mode:ios
   });
   this.categoryService.setPopoverCtrl(popover);
   return await popover.present();
